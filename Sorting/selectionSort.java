@@ -48,7 +48,7 @@ public class selectionSort{
 
 	public static void main(String[] args){
 
-		int[] input_array = {-4,-1,-3,-2};
+		int[] input_array = {23,45,13,9,89};
 		selectionSort ss = new selectionSort();
 		System.out.println("Elements Before Sorting");
 		ss.printArray(input_array);
