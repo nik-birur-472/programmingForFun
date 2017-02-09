@@ -1,16 +1,15 @@
 /*
-*	Selection Sort : Involves arranging the elements of an array in ascending/
+*	Bubble Sort : Involves arranging the elements of an array in ascending/
 *	descending order.
 *
-*	The algorithm works by dividing the array into a sorted and an unsorted array. The 
-*	smallest element in the unsorted array is found and put at the end of the sorted 
-*	array.
+*	The algorithm works moving the largest element to the end of the array like a 
+*	bubble.
 *
 *
 */
 
 
-public class selectionSort{
+public class bubbleSort{
 
 
 
@@ -23,17 +22,15 @@ public class selectionSort{
 	}
 
 
-	public int[] selectSort(int[] input_array){
-		int min_pos = 0;
+	public int[] bubbleSort(int[] input_array){
+		
 		int size_array = input_array.length;
 		for(int i = 0 ; i<size_array - 1; i++){
-			min_pos = i;
-			for(int j = i+1 ; j<size_array; j++){
-				if(input_array[j] < input_array[min_pos]){
-					min_pos = j;
+			for(int j = 0 ; j<size_array - i - 1; j++){
+				if(input_array[j+1] < input_array[j]){
+					swapElements(input_array,j,j+1);
 				}
 			}
-			swapElements(input_array,i,min_pos);
 		}
 
 		return input_array;
@@ -49,12 +46,12 @@ public class selectionSort{
 	public static void main(String[] args){
 
 		int[] input_array = {64, 34, 25, 12, 22, 11, 90};
-		selectionSort ss = new selectionSort();
+		bubbleSort bs = new bubbleSort();
 		System.out.println("Elements Before Sorting");
-		ss.printArray(input_array);
-		int[] output_array = ss.selectSort(input_array);
+		bs.printArray(input_array);
+		int[] output_array = bs.bubbleSort(input_array);
 		System.out.println("Elements After Sorting");
-		ss.printArray(output_array);
+		bs.printArray(output_array);
 
 	}
 
